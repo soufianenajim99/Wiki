@@ -9,10 +9,7 @@ const CONFIG = [
 //app root
 define('APPROOT',dirname(dirname(__FILE__))) ;
 
-//for using url's
-
 define('URLROOT','http://localhost/Wiki/');
-
-//SITE Name
+define('URLCSS','http://localhost/Wiki/public/dist/output.css');
 
 define('SITENAME','Wiki');

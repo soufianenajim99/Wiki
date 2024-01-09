@@ -2,7 +2,7 @@
 require_once "inc/aside.php";
 ?>
 
-<div class="h-full rounded-xl shadow-lg bg-white tablee">
+<div class="h-full rounded-xl shadow-lg bg-white ">
     <div class="container mx-auto p-8">
 
         <!-- Add Category Button -->
@@ -12,21 +12,18 @@ require_once "inc/aside.php";
                 Add Category
             </button>
         </div>
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto tablee">
             <table class="min-w-full bg-white font-[sans-serif]">
                 <thead class="bg-gray-800 whitespace-nowrap">
                     <tr>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Name
+                            Nom Categorie
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Email
+                            Description de Categorie
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Role
-                        </th>
-                        <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Joined At
+                            Image de Categorie
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
                             Actions
@@ -43,9 +40,6 @@ require_once "inc/aside.php";
                         </td>
                         <td class="px-6 py-4 text-sm">
                             Admin
-                        </td>
-                        <td class="px-6 py-4 text-sm">
-                            2022-05-15
                         </td>
                         <td class="px-6 py-4">
                             <button class="mr-4" title="Edit">
@@ -66,9 +60,7 @@ require_once "inc/aside.php";
                         <td class="px-6 py-4 text-sm">
                             User
                         </td>
-                        <td class="px-6 py-4 text-sm">
-                            2022-07-20
-                        </td>
+
                         <td class="px-6 py-4">
                             <button class="mr-4" title="Edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
@@ -88,9 +80,7 @@ require_once "inc/aside.php";
                         <td class="px-6 py-4 text-sm">
                             User
                         </td>
-                        <td class="px-6 py-4 text-sm">
-                            2022-07-21
-                        </td>
+
                         <td class="px-6 py-4">
                             <button class="mr-4" title="Edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
@@ -126,9 +116,7 @@ require_once "inc/aside.php";
                         <td class="px-6 py-4 text-sm">
                             User
                         </td>
-                        <td class="px-6 py-4 text-sm">
-                            2020-07-06
-                        </td>
+
                         <td class="px-6 py-4">
                             <button class="mr-4" title="Edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
@@ -164,9 +152,7 @@ require_once "inc/aside.php";
                         <td class="px-6 py-4 text-sm">
                             User
                         </td>
-                        <td class="px-6 py-4 text-sm">
-                            2021-07-06
-                        </td>
+
                         <td class="px-6 py-4">
                             <button class="mr-4" title="Edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 fill-blue-500 hover:fill-blue-700"
@@ -201,53 +187,39 @@ require_once "inc/aside.php";
 
 </div>
 
-<div class=" w-screen container mx-auto p4-10 flex items-center justify-center popupfo hidden">
-    <div class="absolute max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-xl h-screen z-50 top-0 right-0 ">
+<div class=" w-screen container mx-auto p4-10 flex items-center justify-center popupfo hidden h-3/6 overflow-hidden">
+    <div
+        class="absolute max-w-md mx-auto flex h-3/6 items-center justify-center bg-white rounded-lg overflow-hidden md:max-w-xl h-screen z-50 top-0 right-0 ">
         <div class="md:flex">
             <div class="w-full px-6 py-6 md:p-8">
-                <h2 class="text-2xl font-bold text-gray-800">Checkout</h2>
-                <p class="mt-4 text-gray-600">Please fill out the form below to complete your purchase.</p>
+                <h2 class="text-2xl font-bold text-gray-800">Ajouter une categorie</h2>
+
                 <form class="mt-6">
                     <div class="mb-6">
                         <label class="block text-gray-800 font-bold mb-2" for="name">
-                            Name
+                            Nom de Categorie
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name" type="text" placeholder="John Doe">
                     </div>
                     <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2" for="email">
-                            Email
+                        <label class="block text-gray-800 font-bold mb-2" for="name">
+                            Description de categorie
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="email" type="email" placeholder="johndoe@example.com">
+                            id="name" type="text" placeholder="John Doe">
                     </div>
                     <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2" for="card_number">
-                            Card Number
+                        <label class="block text-gray-800 font-bold mb-2" for="name">
+                            Image de categorie
                         </label>
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="card_number" type="text" placeholder="**** **** **** 1234">
+                            id="name" type="text" placeholder="John Doe">
                     </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2" for="expiration_date">
-                            Expiration Date
-                        </label>
-                        <input
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="expiration_date" type="text" placeholder="MM / YY">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-800 font-bold mb-2" for="cvv">
-                            CVV
-                        </label>
-                        <input
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="cvv" type="text" placeholder="***">
-                    </div>
+
                     <button
                         class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="button">

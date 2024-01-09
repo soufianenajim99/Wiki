@@ -1,0 +1,13 @@
+.cateclass {
+  color: red;
+}
+
+.active-popup {
+  filter: blur(5px);
+  /* background: rgba(0, 0, 0, 0.08); */
+}
+
+.mainn {
+  min-height: 100vh;
+  position: fixed;
+}

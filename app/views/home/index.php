@@ -47,13 +47,13 @@
                 <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
                     <h1
                         class="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-center text-gray-800 dark:text-black font-black leading-10">
-                        Explore a vast World Behind Each
+                        Explore a Vast World Behind Each
                         <span class="text-violet-800 dark:text-violet-500">Wiki</span>
                         Land.
                     </h1>
                     <p
                         class="mt-5 sm:mt-10 lg:w-10/12 text-black-800 dark:text-gray-800 font-normal text-center text-xl">
-                        A Community build tailwind component library.
+                        A Community that Shares knowledge.
                     </p>
                 </div>
                 <div class="flex w-11/12 md:w-8/12 xl:w-6/12">

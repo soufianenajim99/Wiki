@@ -8,7 +8,7 @@ require_once "inc/aside.php";
         <!-- Add Category Button -->
         <div class="mb-4 flex justify-end">
             <button
-                class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
+                class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
                 Add Category
             </button>
         </div>

@@ -4,7 +4,6 @@ class Category {
     private $category_id;
     private $category_name;
     private $category_desc;
-    private $category_image;
 
     public function __construct() {
     }

@@ -5,11 +5,11 @@ require_once "inc/aside.php";
 <div class="h-full rounded-xl shadow-lg bg-white ">
     <div class="container mx-auto p-8">
 
-        <!-- Add Category Button -->
+        <!-- Add user Button -->
         <div class="mb-4 flex justify-end">
             <button
                 class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
-                Add Category
+                Add user
             </button>
         </div>
         <div class="overflow-x-auto tablee">
@@ -17,14 +17,13 @@ require_once "inc/aside.php";
                 <thead class="bg-gray-800 whitespace-nowrap">
                     <tr>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Id de Categorie
+                            FullName User
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Nom Categorie
-
+                            Email User
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Description de Categorie
+                            Role User
                         </th>
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
                             Actions
@@ -195,7 +194,7 @@ require_once "inc/aside.php";
             <div class="w-full px-6 py-6 md:p-8">
                 <h2 class="text-2xl font-bold text-gray-800">Ajouter une categorie</h2>
 
-                <form class="mt-6" method="post" action="">
+                <form class="mt-6">
                     <div class="mb-6">
                         <label class="block text-gray-800 font-bold mb-2" for="name">
                             Nom de Categorie
@@ -212,9 +211,18 @@ require_once "inc/aside.php";
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name" type="text" placeholder="John Doe">
                     </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-800 font-bold mb-2" for="name">
+                            Image de categorie
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="name" type="text" placeholder="John Doe">
+                    </div>
+
                     <button
                         class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        type="submit">
+                        type="button">
                         Submit
                     </button>
                 </form>

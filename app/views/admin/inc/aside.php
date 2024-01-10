@@ -54,7 +54,7 @@
                         Tags
                         <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
                     </a>
-                    <a href="<?= URLROOT ?>admin/wiki" class="inline-block text-gray-600 hover:text-black my-4 w-full">
+                    <a href="<?= URLROOT ?>admin/wikis" class="inline-block text-gray-600 hover:text-black my-4 w-full">
                         <span class="material-icons-outlined float-left pr-2">file_copy</span>
                         Wiki's
                         <span class="material-icons-outlined float-right">keyboard_arrow_right</span>

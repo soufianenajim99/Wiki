@@ -2,17 +2,17 @@
 require_once "inc/aside.php";
 ?>
 
-<div class="h-full rounded-xl shadow-lg bg-white ">
+<!-- Add Category Button -->
+<div class="mb-4 flex justify-end">
+    <button
+        class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
+        Add Category
+    </button>
+
+</div>
+<div class="h-full rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
-        <!-- Add Category Button -->
-        <div class="mb-4 flex justify-end">
-            <button
-                class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
-                Add Category
-            </button>
-
-        </div>
         <div class="overflow-x-auto tablee">
             <table class="min-w-full bg-white font-[sans-serif]">
                 <thead class="bg-gray-800 whitespace-nowrap">
@@ -47,11 +47,12 @@ require_once "inc/aside.php";
                             <?= $cat->category_desc ?>
                         </td>
                         <td class="px-6 py-4">
-                            <button class="mr-4" title="Edit">
-
-                                <i class="fa-solid fa-pen-to-square"></i>
+                            <button>
+                                <a href="<?= URLROOT ?>categorie/editCategory/<?= $cat->category_id ?>" class="p-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
                             </button>
-                            <button type="submit">
+                            <button>
                                 <a href="<?= URLROOT ?>categorie/deleteCategory/<?= $cat->category_id ?>" class="p-2">
                                     <i class="fa-solid fa-trash"></i></a>
                             </button>

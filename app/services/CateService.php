@@ -32,7 +32,7 @@ class CateService implements CategoryInterface {
     }
     public function editCategory(Category $category,$id){
         $conn= $this->conn;
-        $sql = "UPDATE category SET (category_name=:cate_name,category_desc=:cate_desc) WHERE category_id=:id";
+        $sql = "UPDATE category SET category_name=:cate_name,category_desc=:cate_desc WHERE category_id=:id";
         $stmt = $conn->prepare($sql);
         $stmt->execute([  
             ":cate_name"=> $category->category_name,
@@ -53,6 +53,19 @@ class CateService implements CategoryInterface {
         $conn = null;
         $stmt = null;
 
+    }
+
+    public function getCategory($id){
+        $conn= $this->conn;
+        $sql = "SELECT * FROM category WHERE category_id=:id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([  
+            ":id"=>$id
+          ]);
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
+        $conn = null;
+        $stmt = null;
+        return $result;
     }
 }
 

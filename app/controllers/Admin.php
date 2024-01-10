@@ -3,9 +3,12 @@
 class Admin extends Controller {
 
    private $categoryService;
+   private $tagSer;
+
 
 public function __construct(){
 $this->categoryService = new CateService();
+$this->tagSer = new TagService();
 }
 
     public function dashboard() {
@@ -34,6 +37,29 @@ $this->categoryService = new CateService();
         $this->view("admin/categories", $data);
     }
     public function tags() {
+
+      if($_SERVER["REQUEST_METHOD"] === "POST" ){
+        $newtag = new Tag();
+                   var_dump($_POST);
+                   $newtag->tag_name = $_POST["name"];
+                  
+                   try{
+                    $this->tagSer->addTag($newtag);
+                    header("Location:".URLROOT."admin/tags");
+                   }
+                   catch(PDOException $e){
+                    die($e->getMessage());
+                   }
+      }
+      
+      $tags=$this->tagSer->displayTag();
+      $data=[
+        "tags"=> $tags,
+        "titre"=> "wikiland"
+      ];
+        $this->view("admin/tags", $data);
+
+
       $this->view("admin/tags");
     }
     public function users() {

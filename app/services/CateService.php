@@ -13,7 +13,7 @@ class CateService implements CategoryInterface {
         $sql = "SELECT * FROM category";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
         $conn = null;
         $stmt = null;
         return $result;
@@ -45,7 +45,7 @@ class CateService implements CategoryInterface {
     }
     public function deleteCategory($id){
         $conn= $this->conn;
-        $sql = "DELETE * FROM category WHERE category_id=:id";
+        $sql = "DELETE FROM category WHERE category_id=:id";
         $stmt = $conn->prepare($sql);
         $stmt->execute([  
             ":id"=>$id

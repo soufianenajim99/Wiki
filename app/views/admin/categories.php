@@ -70,10 +70,10 @@ require_once "inc/aside.php";
 
 </div>
 
-<div class=" container mx-auto  p4-10 flex items-center justify-center popupfo hidden h-3/6 overflow-hidden ">
+<div class="flex items-center justify-center popupfo hidden overflow-hidden ">
     <div
-        class="absolute max-w-md mx-auto flex items-center justify-center bg-white overflow-hidden md:max-w-xl h-screen z-50 top-0 right-0 ">
-        <div class="md:flex border-l-4 border-black-800">
+        class="absolute max-w-md mx-auto flex items-center border-l-4 border-black-800 justify-center bg-white overflow-hidden md:max-w-xl h-screen z-50 top-0 right-0 ">
+        <div class="md:flex">
             <div class="w-full px-6 py-6 md:p-8">
                 <h2 class="text-2xl font-bold text-gray-800">Ajouter une categorie</h2>
 

@@ -56,7 +56,7 @@
                             Profile
                             <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
                         </a>
-                        <a href="<?= URLROOT ?>author/logout"
+                        <a href="<?= URLROOT ?>auth/logout"
                             class="inline-block text-gray-600 hover:text-black my-4 w-full">
                             <span class="material-icons-outlined float-left pr-2">power_settings_new</span>
                             Log out

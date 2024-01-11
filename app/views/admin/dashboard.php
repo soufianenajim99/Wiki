@@ -13,9 +13,7 @@ require_once "inc/aside.php";
 
     </div>
 </div>
-<?php
-var_dump($_SESSION);
-?>
+
 <div class="flex flex-row h-64 mt-6">
     <div class="bg-white rounded-xl shadow-lg px-6 py-4 w-4/12">
         Categories

@@ -7,13 +7,18 @@ let body = document.querySelector("body");
 let buttonpop = document.querySelector(".openpp");
 
 buttonpop.addEventListener("click", function () {
-  document.body.classList.toggle("backdrop-brightness-50");
-  body.classList.toggle("active-popup");
+  // document.body.classList.toggle("opacity-50");
+  first.classList.toggle("active-popup");
+  second.classList.toggle("active-popup");
+  three.classList.toggle("active-popup");
   popy.classList.toggle("hidden");
 });
 three.addEventListener("click", function () {
-  if (document.body.classList.contains("active-popup")) {
-    document.body.classList.toggle("active-popup");
+  if (first.classList.contains("active-popup")) {
+    console.log("test");
+    first.classList.toggle("active-popup");
+    second.classList.toggle("active-popup");
+    three.classList.toggle("active-popup");
     popy.classList.toggle("hidden");
   }
 });

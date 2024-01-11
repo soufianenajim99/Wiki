@@ -10,7 +10,7 @@ require_once "inc/aside.php";
     </button>
 
 </div>
-<div class="h-full rounded-xl shadow-lg bg-white tablee ">
+<div class="rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
         <div class="overflow-x-auto tablee">
@@ -70,7 +70,7 @@ require_once "inc/aside.php";
 
 </div>
 
-<div class="flex items-center justify-center popupfo hidden overflow-hidden ">
+<div class="flex items-center justify-center popupfo hidden   overflow-hidden ">
     <div
         class="absolute max-w-md mx-auto flex items-center border-l-4 border-black-800 justify-center bg-white overflow-hidden md:max-w-xl h-screen z-50 top-0 right-0 ">
         <div class="md:flex">

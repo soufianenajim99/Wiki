@@ -10,7 +10,7 @@ require_once "inc/aside.php";
     </button>
 
 </div> -->
-<div class="h-full rounded-xl shadow-lg bg-white tablee ">
+<div class="rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
         <div class="overflow-x-auto tablee">
@@ -39,17 +39,28 @@ require_once "inc/aside.php";
                 </thead>
                 <tbody class="whitespace-nowrap divide-y divide-gray-200">
                     <?php
-            foreach ($data["cats"] as $cat) {
+            foreach ($data["wiki"] as $cat) {
             ?>
                     <tr class="hover:bg-blue-50">
                         <td class="px-6 py-4 text-sm">
-                            <?= $cat->category_id ?>
+                            <?= $cat->wiki_title ?>
+                        </td>
+                        <td class="px-6 py-4 text-sm">
+                            <?= $cat->created_at ?>
                         </td>
                         <td class="px-6 py-4 text-sm">
                             <?= $cat->category_name ?>
                         </td>
                         <td class="px-6 py-4 text-sm">
-                            <?= $cat->category_desc ?>
+                            <?= $cat->user_fullname ?>
+                        </td>
+                        <td class="px-6 py-4 text-sm">
+                            <?php if($cat->wiki_statut){
+                                echo "Non Archivee";
+                            } else{
+                                echo "Archivee";
+                            }
+                                ?>
                         </td>
                         <td class="px-6 py-4">
                             <button>

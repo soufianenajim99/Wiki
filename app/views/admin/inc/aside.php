@@ -34,9 +34,10 @@
         </div>
         <div class="bg-grey-100 min-h-screen">
 
-            <div class="flex flex-row pt-24 px-10 pb-4">
+            <div class="flex flex-row pt-24 px-10 pb-4 h-screen">
                 <div class="w-2/12 mr-6 asidd">
-                    <div class="bg-white rounded-xl shadow-lg mb-6 px-6 py-4 h-80vh">
+                    <div
+                        class="bg-white flex flex-col content-stretch justify-evenly rounded-xl shadow-lg mb-6 px-6 py-4 aside h-5/6">
                         <a href="<?= URLROOT ?>admin/dashboard"
                             class="inline-block text-gray-600 hover:text-black my-4 w-full">
                             <span class="material-icons-outlined float-left pr-2">dashboard</span>

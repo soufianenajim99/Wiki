@@ -9,7 +9,7 @@ require_once "inc/aside.php";
         Ajouter un Tag
     </button>
 </div>
-<div class="h-full rounded-xl shadow-lg bg-white tablee ">
+<div class="rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
 

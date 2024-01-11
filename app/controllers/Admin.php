@@ -4,11 +4,15 @@ class Admin extends Controller {
 
    private $categoryService;
    private $tagSer;
+   private $wikiSer;
+   private $userSer;
    
 
 public function __construct(){
 $this->categoryService = new CateService();
 $this->tagSer = new TagService();
+$this->wikiSer = new WikiService();
+$this->userSer = new UserService();
 }
 
     public function dashboard() {
@@ -63,11 +67,18 @@ $this->tagSer = new TagService();
       $this->view("admin/tags");
     }
     public function users() {
-      $this->view("admin/users");
+      $use=$this->userSer->displayUser();
+      $data=[
+        "user"=> $use
+      ];
+      $this->view("admin/users" , $data);
     }
     public function wikis() {
-
-      $this->view("admin/wikis");
+      $wi=$this->wikiSer->displayWiki();
+      $data=[
+        "wiki"=> $wi
+      ];
+      $this->view("admin/wikis", $data);
     }
 
 }

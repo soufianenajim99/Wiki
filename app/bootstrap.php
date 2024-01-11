@@ -7,7 +7,8 @@ function Autoloader($class) {
   $paths = [
       APPROOT."/libraries/",
       APPROOT."/services/",
-      APPROOT."/models/"
+      APPROOT."/models/",
+      APPROOT."/controllers/"
   ];
 
 

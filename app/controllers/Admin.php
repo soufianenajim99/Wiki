@@ -9,6 +9,9 @@ class Admin extends Controller {
    
 
 public function __construct(){
+  if(!Auth::islogged()){
+    header("Location:".URLROOT."auth/login");    
+  }
 $this->categoryService = new CateService();
 $this->tagSer = new TagService();
 $this->wikiSer = new WikiService();

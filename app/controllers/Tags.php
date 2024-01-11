@@ -3,6 +3,9 @@
 class Tags extends Controller{
     private $tagSer;
     public function __construct(){
+      if(!Auth::islogged()){
+        header("Location:".URLROOT."auth/login");    
+      }
       $this->tagSer = new TagService();
     }
 

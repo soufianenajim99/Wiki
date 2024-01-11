@@ -5,7 +5,6 @@ class Auth extends Controller{
     private $UsersService;
     public function __construct(){     
         $this->UsersService = new UserService();  
-
     }
 
 
@@ -62,16 +61,20 @@ public function register(){
 
 public function createSession($user){
     $_SESSION["Id_user"] = $user->user_id;
+    $_SESSION["user_fullname"] = $user->user_fullname;
+    $_SESSION["user_email"] = $user->user_email;
     // header("Location:".URLROOT."client/product");
 }
 
-public function destroySession($user){
+public function logout(){
         unset($_SESSION["Id_user"]);
+        unset($_SESSION["user_fullname"]);
+        unset($_SESSION["user_email"]);
         session_destroy();
     header("Location:".URLROOT."auth/login");
 }
 
-public function islogged(){
+public static function islogged(){
     if(isset($_SESSION["Id_user"])){
         return true;
     }else{

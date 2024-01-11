@@ -31,6 +31,10 @@
                     <a href="#">Contact </a>
                 </li>
             </ul>
+            <?php
+            if(!isset(  $_SESSION["Id_user"])){
+                ?>
+
             <div class="hidden items-center justify-center gap-6 md:flex">
                 <a href="<?= URLROOT ?>auth/login" class="font-dm text-sm font-medium text-slate-700">Sign in</a>
                 <a href="<?= URLROOT ?>auth/register"
@@ -38,9 +42,21 @@
                     up for free
                 </a>
             </div>
+            <?php
+            }else{
+                ?>
+            <a href="<?= URLROOT ?>auth/logout"
+                class="rounded-md bg-gradient-to-r from-indigo-600 to-indigo-900 px-3 py-1.5 font-dm text-sm font-medium text-white shadow-md shadow-indigo-400/50 transition-transform duration-200 ease-in-out hover:scale-[1.03]">
+                logout
+            </a>
+            <?php
+            }
+            ?>
         </nav>
     </header>
-
+    <?php
+var_dump($_SESSION);
+?>
     <div class="bg-white/80 h-90vh flex justify-center items-center">
         <div class="dark:bg-transparent">
             <div class="mx-auto flex flex-col items-center py-12 sm:py-24">

@@ -4,6 +4,9 @@ class Categorie extends Controller {
    private $categoryService;
 
    public function __construct(){
+    if(!Auth::islogged()){
+      header("Location:".URLROOT."auth/login");    
+    }
     $this->categoryService = new CateService();
    }
 

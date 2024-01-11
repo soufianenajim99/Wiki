@@ -3,9 +3,9 @@
 class Author extends Controller {
 
 
-    public function wiki() {
+    public function wikis() {
       
-      $this->view("author/wiki");
+      $this->view("author/wikis");
     }
     public function dashboard() {
       $this->view("author/dashboard");

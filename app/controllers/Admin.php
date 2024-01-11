@@ -4,7 +4,7 @@ class Admin extends Controller {
 
    private $categoryService;
    private $tagSer;
-
+   
 
 public function __construct(){
 $this->categoryService = new CateService();
@@ -66,6 +66,7 @@ $this->tagSer = new TagService();
       $this->view("admin/users");
     }
     public function wikis() {
+
       $this->view("admin/wikis");
     }
 

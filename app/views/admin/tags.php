@@ -2,18 +2,18 @@
 require_once "inc/aside.php";
 ?>
 
-<div class="h-full rounded-xl shadow-lg bg-white ">
+<!-- Add Tag Button -->
+<div class="mb-4 flex justify-end">
+    <button
+        class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
+        Ajouter un Tag
+    </button>
+</div>
+<div class="h-full rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
-        <!-- Add Tag Button -->
-        <div class="mb-4 flex justify-end">
-            <button
-                class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
-                Ajouter un Tag
-            </button>
-        </div>
 
-        <div class="overflow-x-auto tablee">
+        <div class="overflow-x-auto">
             <table class="min-w-full bg-white font-[sans-serif]">
                 <thead class="bg-gray-800 whitespace-nowrap">
                     <tr>

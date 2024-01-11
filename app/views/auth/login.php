@@ -12,11 +12,11 @@ require_once APPROOT."/views/inc/header.php";
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form method="POST" action="#">
+            <form method="POST" action="">
 
                 <div class="mt-6">
-                    <label for="username" class="block text-sm font-medium leading-5 text-gray-700">Username</label>
-                    <input id="name" name="name" placeholder="Username" type="text" required="" value=""
+                    <label for="name" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+                    <input id="name" name="email" placeholder="Email" type="text" required="" value=""
                         class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                 </div>
 

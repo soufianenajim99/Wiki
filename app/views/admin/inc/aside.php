@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 
-<body class="h-full opacity-50">
+<body class="h-full">
     <div class="">
         <link
             href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"

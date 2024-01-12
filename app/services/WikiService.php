@@ -23,7 +23,6 @@ public function displayWiki(){
     $conn=null;
     $result=null;
     return $data;
-
 }
 public function addWiki(Wiki $wiki){
 

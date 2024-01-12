@@ -54,9 +54,6 @@
             ?>
         </nav>
     </header>
-    <?php
-var_dump($_SESSION);
-?>
     <div class="bg-white/80 h-90vh flex justify-center items-center">
         <div class="dark:bg-transparent">
             <div class="mx-auto flex flex-col items-center py-12 sm:py-24">

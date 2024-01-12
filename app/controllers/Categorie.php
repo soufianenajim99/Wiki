@@ -2,9 +2,11 @@
 
 class Categorie extends Controller {
    private $categoryService;
+   private $userSer;
 
    public function __construct(){
-    if(!Auth::islogged()){
+    $this->userSer = new UserService();
+    if(!Auth::islogged() || $this->userSer->isAuthor($_SESSION["Id_user"])){
       header("Location:".URLROOT."auth/login");    
     }
     $this->categoryService = new CateService();
@@ -17,7 +19,7 @@ class Categorie extends Controller {
 
     public function editCategory($id) {
         if($_SERVER["REQUEST_METHOD"] === "POST" ){
-            $newCategorie = new Category();
+            $newCategorie = $this->model("Category");
                        var_dump($_POST);
                        $newCategorie->category_name = $_POST["name"];
                        $newCategorie->category_desc = $_POST["desc"];

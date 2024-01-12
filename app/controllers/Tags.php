@@ -2,8 +2,9 @@
 
 class Tags extends Controller{
     private $tagSer;
+    private $userSer;
     public function __construct(){
-      if(!Auth::islogged()){
+      if(!Auth::islogged() || $this->userSer->isAuthor($_SESSION["Id_user"])){
         header("Location:".URLROOT."auth/login");    
       }
       $this->tagSer = new TagService();
@@ -16,7 +17,7 @@ class Tags extends Controller{
     
         public function editTag($id) {
             if($_SERVER["REQUEST_METHOD"] === "POST" ){
-                $newtag = new Tag();
+                $newtag = $this->model("Tag");
                            var_dump($_POST);
                            $newtag->tag_name = $_POST["name"];
                            try{

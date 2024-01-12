@@ -9,13 +9,13 @@ class Admin extends Controller {
    
 
 public function __construct(){
-  if(!Auth::islogged()){
+  $this->userSer = new UserService();
+  if(!Auth::islogged() || $this->userSer->isAuthor($_SESSION["Id_user"])){
     header("Location:".URLROOT."auth/login");    
   }
 $this->categoryService = new CateService();
 $this->tagSer = new TagService();
 $this->wikiSer = new WikiService();
-$this->userSer = new UserService();
 }
 
     public function dashboard() {
@@ -23,7 +23,7 @@ $this->userSer = new UserService();
     }
     public function categories() {
       if($_SERVER["REQUEST_METHOD"] === "POST" ){
-        $newCategorie = new Category();
+        $newCategorie = $this->model("Category");
                    var_dump($_POST);
                    $newCategorie->category_name = $_POST["name"];
                    $newCategorie->category_desc = $_POST["desc"];
@@ -46,7 +46,7 @@ $this->userSer = new UserService();
     public function tags() {
 
       if($_SERVER["REQUEST_METHOD"] === "POST" ){
-        $newtag = new Tag();
+        $newtag = new $this->model("Tag");;
                    var_dump($_POST);
                    $newtag->tag_name = $_POST["name"];
                   

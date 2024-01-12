@@ -2,14 +2,17 @@
 require_once "inc/aside.php";
 ?>
 
-<!-- Add Category Button -->
-<!-- <div class="mb-4 flex justify-end">
-    <button
-        class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
-        Ajouter un Wiki
-    </button>
+<!-- Add Category Button  -->
+<div class="mb-4 flex justify-end">
+    <a href="<?= URLROOT ?>author/addWiki">
 
-</div> -->
+        <button
+            class="openpp bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue">
+            Ajouter un Wiki
+        </button>
+    </a>
+
+</div>
 <div class="rounded-xl shadow-lg bg-white tablee ">
     <div class="container mx-auto p-8">
 
@@ -170,9 +173,10 @@ require_once "inc/aside.php";
     </div>
 </div>
 
+</div>
+</div>
+</div>
 
+</body>
 
-
-<?php
-require_once "inc/footer.php";
-?>
+</html>

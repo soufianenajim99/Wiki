@@ -54,6 +54,12 @@
             ?>
         </nav>
     </header>
+    <?php
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
+    ?>
+
     <div class="bg-white/80 h-90vh flex justify-center items-center">
         <div class="dark:bg-transparent">
             <div class="mx-auto flex flex-col items-center py-12 sm:py-24">
@@ -96,25 +102,25 @@
 
         <div class="border-b mb-5 flex justify-between text-sm">
             <div class=" flex items-center pb-2 pr-2  gap-10  uppercase">
-                <a href="#"
+                <a href="<?= URLROOT ?>home/explore"
                     class="font-semibold inline-block border-b-2 border-indigo-600 pb-2 pr-2 text-indigo-600">Explore</a>
                 <a href="#" class="font-semibold inline-block">Latest Wiki's</a>
                 <a href="#" class="font-semibold inline-block">Categories</a>
             </div>
 
-            <a href="#">See All</a>
+            <a href="<?= URLROOT ?>home/explore">See All</a>
         </div>
 
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
-            <!-- CARD 1 -->
+            <?php
+         foreach($data["wiki"] as $wiki){
+        ?>
             <div class="rounded overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
                 <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
+                        <img class="w-full" src="<?= $wiki->wiki_image ?>" alt="Sunset in the mountains">
                         <div
                             class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
                         </div>
@@ -122,16 +128,17 @@
                     <a href="#!">
                         <div
                             class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            History
+                            <?= $wiki->category_name ?>
                         </div>
                     </a>
                 </div>
                 <div class="px-6 py-4 mb-auto">
                     <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest
-                        Salad Recipe ever</a>
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">
+                        <?= $wiki->wiki_title ?>
+                    </a>
                     <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <?= $wiki->wiki_desc ?>
                     </p>
                 </div>
                 <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
@@ -147,7 +154,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <span class="ml-1">6 mins ago</span>
+                        <span class="ml-1"><?= $wiki->created_at?></span>
                     </span>
 
                     <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
@@ -156,289 +163,30 @@
                                 d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
                             </path>
                         </svg>
-                        <span class="ml-1">39 Comments</span>
+                        <span class="ml-1"><?= $wiki->user_fullname?></span>
                     </span>
                 </div>
             </div>
+            <?php
+         }
+        ?>
 
-
-
-            <!-- CARD 2 -->
-            <div class="rounded overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
-                        <div
-                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                        </div>
-                    </a><a href="#!">
-                        <div
-                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            Technology
-                        </div>
-                    </a>
-                </div>
-                <div class="px-6 py-4 mb-auto">
-                    <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Best
-                        FastFood Ideas (Yummy)</a>
-                    <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="ml-1"> 10 days ago</span>
-                    </span>
-
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                            </path>
-                        </svg>
-                        <span class="ml-1">0 Comments</span>
-                    </span>
-                </div>
-            </div>
-
-
-
-            <!-- CARD 3 -->
-            <div class="rounded overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
-                        <div
-                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                        </div>
-                    </a><a href="#!">
-                        <div
-                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            Cooking
-                        </div>
-                    </a>
-                </div>
-                <div class="px-6 py-4 mb-auto">
-                    <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Why
-                        to eat salad?</a>
-                    <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="ml-1">16 hours ago</span>
-                    </span>
-
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                            </path>
-                        </svg>
-                        <span class="ml-1">9 Comments</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="rounded overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
-                        <div
-                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                        </div>
-                    </a>
-                    <a href="#!">
-                        <div
-                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            History
-                        </div>
-                    </a>
-                </div>
-                <div class="px-6 py-4 mb-auto">
-                    <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest
-                        Salad Recipe ever</a>
-                    <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="ml-1">6 mins ago</span>
-                    </span>
-
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                            </path>
-                        </svg>
-                        <span class="ml-1">39 Comments</span>
-                    </span>
-                </div>
-            </div>
-
-
-
-            <!-- CARD 2 -->
-            <div class="rounded overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
-                        <div
-                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                        </div>
-                    </a><a href="#!">
-                        <div
-                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            Technology
-                        </div>
-                    </a>
-                </div>
-                <div class="px-6 py-4 mb-auto">
-                    <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Best
-                        FastFood Ideas (Yummy)</a>
-                    <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="ml-1"> 10 days ago</span>
-                    </span>
-
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                            </path>
-                        </svg>
-                        <span class="ml-1">0 Comments</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="rounded overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
-                        <img class="w-full"
-                            src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Sunset in the mountains">
-                        <div
-                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                        </div>
-                    </a><a href="#!">
-                        <div
-                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                            Cooking
-                        </div>
-                    </a>
-                </div>
-                <div class="px-6 py-4 mb-auto">
-                    <a href="#"
-                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Why
-                        to eat salad?</a>
-                    <p class="text-gray-500 text-sm">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path
-                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="ml-1">16 hours ago</span>
-                    </span>
-
-                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                            </path>
-                        </svg>
-                        <span class="ml-1">9 Comments</span>
-                    </span>
-                </div>
-            </div>
 
         </div>
         <div
             class="fter:h-px my-24 flex items-center justify-center mt-12 before:h-px before:flex-1  before:bg-gray-300 before:content-[''] after:h-px after:flex-1 after:bg-gray-300  after:content-['']">
-            <button type="button"
-                class="flex items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-4 w-4">
-                    <path fill-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        clip-rule="evenodd" />
-                </svg>
-                View More
-            </button>
+            <a href="<?= URLROOT ?>home/explore">
+                <button type="button"
+                    class="flex items-center rounded-full border border-gray-300 bg-secondary-50 px-3 py-2 text-center text-sm font-medium text-gray-900 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        class="mr-1 h-4 w-4">
+                        <path fill-rule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    View More
+                </button>
+            </a>
         </div>
 
 

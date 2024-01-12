@@ -41,7 +41,7 @@ class Author extends Controller {
         echo "</pre>";
         move_uploaded_file($_FILES["image"]["tmp_name"],'C:\xampp\htdocs\Wiki\public\img\\'.$_FILES["image"]["name"]);
 
-                   $newWiki->wiki_image = 'C:\xampp\htdocs\Wiki\public\img\\'.$_FILES["image"]["name"];
+                   $newWiki->wiki_image = URLIMG.$_FILES["image"]["name"];
                    $newWiki->wiki_title = $_POST["titre"];
                    $newWiki->wiki_desc = $_POST["desc"];
                    $newWiki->wiki_content = $_POST["content"];

@@ -24,6 +24,22 @@ public function displayWiki(){
     $result=null;
     return $data;
 }
+
+public function displayFewWiki(){
+    $conn = $this->conn;
+    $sql="SELECT wiki.*,user.user_fullname,category.category_name 
+    FROM `wiki`
+    JOIN user ON user.user_id=wiki.user_id
+    JOIN category ON category.category_id=wiki.category_id
+    LIMIT 6;";
+    $result = $conn->prepare($sql);
+    $result->execute();
+    $data=$result->fetchAll(PDO::FETCH_OBJ);
+    $conn=null;
+    $result=null;
+    return $data;
+}
+
 public function addWiki(Wiki $wiki){
     $conn = $this->conn;
     $sql= "
@@ -47,6 +63,23 @@ public function editWiki(Wiki $wiki,$id){
 }
 public function deleteWiki($id){
 
+}
+
+public function getWiki($id){
+    $conn = $this->conn;
+    $sql="SELECT wiki.*,user.user_fullname,category.category_name 
+    FROM `wiki`
+    JOIN user ON user.user_id=wiki.user_id
+    JOIN category ON category.category_id=wiki.category_id
+    WHERE wiki_id=:id";
+    $result = $conn->prepare($sql);
+    $result->execute([
+        ":id"=> $id
+    ]);
+    $data=$result->fetchAll(PDO::FETCH_OBJ);
+    $conn=null;
+    $result=null;
+    return $data;
 }
 
 }

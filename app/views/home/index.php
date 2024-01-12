@@ -16,7 +16,7 @@
         <nav
             class="mx-auto flex justify-around max-w-screen gap-8 px-6 transition-all duration-200 ease-in-out lg:px-12 py-4 ">
             <div class="relative flex items-center justify-center">
-                <a href="/">
+                <a href="<?= URLROOT ?>home/index">
                     <img src="<?= URLROOT ?>public/img/WIKI.png" loading="lazy" style="color:transparent" width="100"
                         height="100"></a>
             </div>
@@ -25,7 +25,17 @@
                     <a href="#">Wiki</a>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-                    <a href="#">About</a>
+                    <?php
+            if(isset(  $_SESSION["Id_user"])){
+                ?>
+                    <a href="<?= URLROOT ?>auth/dashred/<?=$_SESSION["Id_user"] ?>">Dashboard</a>
+                    <?php
+            }else{
+                ?>
+                    <a href="#">Contact</a>
+                    <?php
+            }
+            ?>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
                     <a href="#">Contact </a>
@@ -54,11 +64,7 @@
             ?>
         </nav>
     </header>
-    <?php
-    echo "<pre>";
-    var_dump($data);
-    echo "</pre>";
-    ?>
+
 
     <div class="bg-white/80 h-90vh flex justify-center items-center">
         <div class="dark:bg-transparent">
@@ -104,8 +110,8 @@
             <div class=" flex items-center pb-2 pr-2  gap-10  uppercase">
                 <a href="<?= URLROOT ?>home/explore"
                     class="font-semibold inline-block border-b-2 border-indigo-600 pb-2 pr-2 text-indigo-600">Explore</a>
-                <a href="#" class="font-semibold inline-block">Latest Wiki's</a>
-                <a href="#" class="font-semibold inline-block">Categories</a>
+                <a href="<?= URLROOT ?>home/lawiki" class="font-semibold inline-block">Latest Wiki's</a>
+                <a href="<?= URLROOT ?>home/lacate" class="font-semibold inline-block">Latest Categories</a>
             </div>
 
             <a href="<?= URLROOT ?>home/explore">See All</a>
@@ -119,7 +125,7 @@
         ?>
             <div class="rounded overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
-                <div class="relative"><a href="#">
+                <div class="relative"><a href="<?= URLROOT ?>home/wikiPage/<?= $wiki->wiki_id ?>">
                         <img class="w-full" src="<?= $wiki->wiki_image ?>" alt="Sunset in the mountains">
                         <div
                             class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
@@ -133,7 +139,7 @@
                     </a>
                 </div>
                 <div class="px-6 py-4 mb-auto">
-                    <a href="#"
+                    <a href="<?= URLROOT ?>home/wikiPage/<?= $wiki->wiki_id ?>"
                         class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">
                         <?= $wiki->wiki_title ?>
                     </a>

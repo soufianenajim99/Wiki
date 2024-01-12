@@ -20,7 +20,7 @@
 
         <div class="fixed bg-white text-blue-800 px-10 py-1 z-10 w-full navv">
             <div class="flex items-center justify-between py-2 text-5x1">
-                <a href="<?= URLROOT ?>phome/index"><img src="<?= URLROOT ?>public/img/WIKI.png" loading="lazy"
+                <a href="<?= URLROOT ?>home/index"><img src="<?= URLROOT ?>public/img/WIKI.png" loading="lazy"
                         style="color:transparent" width="100" height="100"></a>
 
                 <div class="flex items-center text-gray-500">

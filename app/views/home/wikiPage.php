@@ -16,7 +16,7 @@
         <nav
             class="mx-auto flex justify-around max-w-screen gap-8 px-6 transition-all duration-200 ease-in-out lg:px-12 py-4 ">
             <div class="relative flex items-center justify-center">
-                <a href="/">
+                <a href="<?= URLROOT ?>home/index">
                     <img src="<?= URLROOT ?>public/img/WIKI.png" loading="lazy" style="color:transparent" width="100"
                         height="100"></a>
             </div>
@@ -25,7 +25,17 @@
                     <a href="#">Wiki</a>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-                    <a href="#">About</a>
+                    <?php
+            if(isset(  $_SESSION["Id_user"])){
+                ?>
+                    <a href="<?= URLROOT ?>auth/dashred/<?=$_SESSION["Id_user"] ?>">Dashboard</a>
+                    <?php
+            }else{
+                ?>
+                    <a href="#">Contact</a>
+                    <?php
+            }
+            ?>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
                     <a href="#">Contact </a>
@@ -56,34 +66,28 @@
     </header>
 
 
+    <?php
+var_dump($data);
+    ?>
     <div class="max-w-screen-lg mx-auto p-5 sm:p-10 md:p-16">
 
         <div class="mb-10 rounded overflow-hidden flex flex-col mx-auto">
             <a href="#"
-                class="text-xl sm:text-4xl font-semibold inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">The
-                Best Activewear from the Nordstrom Anniversary Sale</a>
+                class="text-xl sm:text-4xl font-semibold inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">
+                <?= $data["wiki"]->wiki_title ?></a>
 
             <div class="relative">
                 <a href="#">
-                    <img class="w-full"
-                        src="https://images.pexels.com/photos/5120892/pexels-photo-5120892.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=625.0&amp;sharp=10&amp;w=1500"
-                        alt="Sunset in the mountains">
+                    <img class="w-full" src=" <?= $data["wiki"]->wiki_image ?>" alt="Sunset in the mountains">
                 </a>
                 <a href="#!"
                     class="hidden absolute z-10 text-xs absolute bottom-0 left-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span
-                        class="text-lg">|</span>&nbsp;&nbsp;<span>Cooking</span></a>
+                        class="text-lg">|</span>&nbsp;&nbsp;<span><?= $data["wiki"]->wiki_desc ?></span></a>
 
-                <a href="#!"
-                    class="hidden absolute z-10 text-xs absolute bottom-0 right-0 bg-indigo-600 px-6 m-2 py-2 text-white hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out sm:flex items-center"><span
-                        class="text-lg">|</span>&nbsp;&nbsp;<span>Read more</span></a>
 
             </div>
             <p class="text-gray-700 py-5 text-base leading-8">
-                Machu Picchu is a 15th-century Inca citadel situated on a mountain ridge 2,430 metres (7,970 ft) above
-                sea
-                level. It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru, above the
-                Sacred
-                Valley, which is 80 kilometres (50 mi) northwest of Cuzco and through which the Urubamba River flows.
+                <?= $data["wiki"]->wiki_content ?>
             </p>
             <div class="py-5 text-sm font-regular text-gray-900 flex">
                 <span class="mr-3 flex flex-row items-center">
@@ -99,7 +103,7 @@
                             </g>
                         </g>
                     </svg>
-                    <span class="ml-1">6 mins ago</span></span>
+                    <span class="ml-1"><?= $data["wiki"]->created_at?></span></span>
                 <a href="#" class="flex flex-row items-center hover:text-indigo-600">
                     <svg class="text-indigo-600" fill="currentColor" height="16px" aria-hidden="true" role="img"
                         focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +112,7 @@
                         </path>
                         <path d="M0 0h24v24H0z" fill="none"></path>
                     </svg>
-                    <span class="ml-1">AliSher Azimi</span></a>
+                    <span class="ml-1"><?= $data["wiki"]->user_fullname?></span></a>
             </div>
             <hr>
 

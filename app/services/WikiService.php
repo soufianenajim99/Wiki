@@ -76,10 +76,37 @@ public function getWiki($id){
     $result->execute([
         ":id"=> $id
     ]);
+    $data=$result->fetch(PDO::FETCH_OBJ);
+    $conn=null;
+    $result=null;
+    return $data;
+}
+
+
+public function latestwiki(){
+    $conn = $this->conn;
+    $sql="SELECT wiki.*,user.user_fullname,category.category_name 
+    FROM `wiki`
+    JOIN user ON user.user_id=wiki.user_id
+    JOIN category ON category.category_id=wiki.category_id
+    ORDER BY wiki_id DESC";
+    $result = $conn->prepare($sql);
+    $result->execute();
     $data=$result->fetchAll(PDO::FETCH_OBJ);
     $conn=null;
     $result=null;
     return $data;
+}
+
+public function latestcate(){
+    $conn= $this->conn;
+    $sql = "SELECT * FROM category ORDER BY category_id DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $conn = null;
+    $stmt = null;
+    return $result;
 }
 
 }

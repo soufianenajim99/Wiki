@@ -82,6 +82,16 @@ public static function islogged(){
     }
 }
 
+public function dashred($id){
+    if($this->UsersService->isAuthor($id)){
+        header("Location:".URLROOT."author/dashboard");
+    }else{
+        header("Location:".URLROOT."admin/dashboard");
+
+    }
+
+}
+
 
 }
 

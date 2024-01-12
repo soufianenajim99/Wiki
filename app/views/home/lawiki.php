@@ -70,9 +70,10 @@
 
         <div class="border-b mb-5 flex justify-between text-sm">
             <div class=" flex items-center pb-2 pr-2  gap-10  uppercase">
-                <a href="<?= URLROOT ?>home/explore"
-                    class="font-semibold inline-block border-b-2 border-indigo-600 pb-2 pr-2 text-indigo-600">Explore</a>
-                <a href="<?= URLROOT ?>home/lawiki" class="font-semibold inline-block">Latest Wiki's</a>
+                <a href="<?= URLROOT ?>home/explore" class="font-semibold inline-block">Explore</a>
+                <a href="<?= URLROOT ?>home/lawiki"
+                    class="font-semibold inline-block border-b-2 border-indigo-600 pb-2 pr-2 text-indigo-600">Latest
+                    Wiki's</a>
                 <a href="<?= URLROOT ?>home/lacate" class="font-semibold inline-block">Categories</a>
             </div>
 

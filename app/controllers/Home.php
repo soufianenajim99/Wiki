@@ -24,6 +24,7 @@ class Home extends Controller{
     }
 
     public function wikiPage($id){
+
         $wi=$this->wikiSer->getWiki($id);
         $data=[
             "wiki"=> $wi

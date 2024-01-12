@@ -89,6 +89,18 @@ var_dump($data);
             <p class="text-gray-700 py-5 text-base leading-8">
                 <?= $data["wiki"]->wiki_content ?>
             </p>
+
+
+            <div class="container mx-auto p-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h1 class="text-lg font-semibold mb-4">Tags</h1>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-blue-200 hover:bg-blue-300 py-1 px-2 rounded-lg text-sm">Technology</a>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="py-5 text-sm font-regular text-gray-900 flex">
                 <span class="mr-3 flex flex-row items-center">
                     <svg class="text-indigo-600" fill="currentColor" height="13px" width="13px" version="1.1"

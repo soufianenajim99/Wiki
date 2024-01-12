@@ -72,7 +72,7 @@ require_once "inc/aside.php";
                                 </a>
                             </button>
                             <button>
-                                <a href="<?= URLROOT ?>categorie/deleteCategory/<?= $cat->category_id ?>" class="p-2">
+                                <a href="<?= URLROOT ?>Wiki/deleteWiki/<?= $cat->wiki_id ?>" class="p-2">
                                     <i class="fa-solid fa-trash"></i></a>
                             </button>
                         </td>

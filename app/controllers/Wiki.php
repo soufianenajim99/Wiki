@@ -12,8 +12,8 @@ class Wiki extends Controller{
     }
 
     public function deleteWiki($id) {
-        $this->tagSer->deleteTag($id);
-        header("Location:".URLROOT."admin/tags");
+        $this->wikiSer->deleteWiki($id);
+        header("Location:".URLROOT."author/wikis");
         }
     
         public function editTag($id) {

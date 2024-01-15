@@ -4,6 +4,7 @@ class Tags extends Controller{
     private $tagSer;
     private $userSer;
     public function __construct(){
+    $this->userSer = new UserService();
       if(!Auth::islogged() || $this->userSer->isAuthor($_SESSION["Id_user"])){
         header("Location:".URLROOT."auth/login");    
       }

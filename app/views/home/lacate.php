@@ -22,7 +22,7 @@
             </div>
             <ul class="hidden items-center justify-center gap-6 md:flex">
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-                    <a href="#">Wiki</a>
+                    <a href="<?= URLROOT ?>home/explore">Wiki</a>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
                     <?php
@@ -38,7 +38,7 @@
             ?>
                 </li>
                 <li class="pt-1.5 font-dm text-sm font-medium text-slate-700">
-                    <a href="#">Contact </a>
+                    <a href="#">About </a>
                 </li>
             </ul>
             <?php
@@ -62,7 +62,52 @@
             <?php
             }
             ?>
+
+            <button id="burger-btn" class="md:hidden"><i class="fa-solid fa-bars text-2xl"></i></button>
+
+
         </nav>
+        <div class="md:hidden">
+            <div id="burger-menu"
+                class="absolute flex hidden flex-col items-center space-y-6 font-bold bg-gray-50 py-8 left-6 right-6 drop-shadow-lg border border-gray-300">
+                <a href="">Wiki</a>
+                <?php
+            if(isset(  $_SESSION["Id_user"])){
+                ?>
+                <a href="<?= URLROOT ?>auth/dashred/<?=$_SESSION["Id_user"] ?>">Dashboard</a>
+                <?php
+            }else{
+                ?>
+                <a href="#">Contact</a>
+                <?php
+            }
+            ?>
+                <a href="">About</a>
+                <?php
+            if(!isset(  $_SESSION["Id_user"])){
+                ?>
+
+
+                <a href="<?= URLROOT ?>auth/login">Sign in</a>
+                <a href="<?= URLROOT ?>auth/register"
+                    class="rounded-md bg-gradient-to-r from-indigo-600 to-indigo-900 px-3 py-1.5 font-dm text-sm font-medium text-white shadow-md shadow-indigo-400/50 transition-transform duration-200 ease-in-out hover:scale-[1.03]">Sign
+                    up for free
+                </a>
+
+                <?php
+            }else{
+                ?>
+                <a href="<?= URLROOT ?>auth/logout"
+                    class="rounded-md bg-gradient-to-r from-indigo-600 to-indigo-900 px-3 py-1.5 font-dm text-sm font-medium text-white shadow-md shadow-indigo-400/50 transition-transform duration-200 ease-in-out hover:scale-[1.03]">
+                    logout
+                </a>
+                <?php
+            }
+            ?>
+
+            </div>
+
+        </div>
     </header>
 
 
@@ -196,7 +241,7 @@
             </p>
         </div>
     </section>
-
+    <script src="<?= URLROOT ?>public/js/nav.js"></script>
 </body>
 
 </html>

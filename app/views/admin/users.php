@@ -26,9 +26,7 @@ require_once "inc/aside.php";
                         <th class="px-6 py-3 text-left text-sm font-semibold text-white">
                             Role User
                         </th>
-                        <th class="px-6 py-3 text-left text-sm font-semibold text-white">
-                            Actions
-                        </th>
+
                     </tr>
                 </thead>
                 <tbody class="whitespace-nowrap divide-y divide-gray-200">
@@ -45,17 +43,7 @@ require_once "inc/aside.php";
                         <td class="px-6 py-4 text-sm">
                             <?= $cat->user_role ?>
                         </td>
-                        <td class="px-6 py-4">
-                            <button>
-                                <a href="<?= URLROOT ?>categorie/editCategory/<?= $cat->category_id ?>" class="p-2">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
-                            </button>
-                            <button>
-                                <a href="<?= URLROOT ?>categorie/deleteCategory/<?= $cat->category_id ?>" class="p-2">
-                                    <i class="fa-solid fa-trash"></i></a>
-                            </button>
-                        </td>
+
                     </tr>
                     <?php
                     }

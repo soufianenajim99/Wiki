@@ -41,26 +41,22 @@
                         <a href="<?= URLROOT ?>author/dashboard"
                             class="inline-block text-gray-600 hover:text-black my-4 w-full">
                             <span class="material-icons-outlined float-left pr-2">dashboard</span>
-                            Dashboard
-                            <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
+
+                            <p class="admin-aside">Dashboard</p>
                         </a>
                         <a href="<?= URLROOT ?>author/wikis"
                             class="inline-block text-gray-600 hover:text-black my-4 w-full">
                             <span class="material-icons-outlined float-left pr-2">file_copy</span>
-                            My Wiki's
-                            <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
+
+                            <p class="admin-aside">My Wiki's</p>
                         </a>
-                        <a href="<?= URLROOT ?>author/profile"
-                            class="inline-block text-gray-600 hover:text-black my-4 w-full">
-                            <span class="material-icons-outlined float-left pr-2">face</span>
-                            Profile
-                            <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
-                        </a>
+
                         <a href="<?= URLROOT ?>auth/logout"
                             class="inline-block text-gray-600 hover:text-black my-4 w-full">
                             <span class="material-icons-outlined float-left pr-2">power_settings_new</span>
-                            Log out
-                            <span class="material-icons-outlined float-right">keyboard_arrow_right</span>
+
+                            <p class="admin-aside"> Log out</p>
+
                         </a>
                     </div>
 

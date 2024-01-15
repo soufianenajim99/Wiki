@@ -26,7 +26,9 @@ class Home extends Controller{
     public function wikiPage($id){
 
         $wi=$this->wikiSer->getWiki($id);
+        $tagwi=$this->wikiSer->gettagwiki($id);
         $data=[
+          "tags"=> $tagwi,
             "wiki"=> $wi
           ];
        $this->view("home/wikiPage", $data);

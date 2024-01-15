@@ -19,7 +19,18 @@ $this->wikiSer = new WikiService();
 }
 
     public function dashboard() {
-      $this->view("admin/dashboard");
+
+      $cate= $this->wikiSer->countcate();
+      $users= $this->wikiSer->countusers();
+      $wiki= $this->wikiSer->countwiki();
+      $tags= $this->wikiSer->counttags();
+      $data=[
+        "cate"=> $cate,
+        "users"=> $users,
+        "wiki"=> $wiki,
+        "tags"=> $tags
+      ];
+      $this->view("admin/dashboard", $data);
     }
     public function categories() {
       if($_SERVER["REQUEST_METHOD"] === "POST" ){
@@ -46,7 +57,7 @@ $this->wikiSer = new WikiService();
     public function tags() {
 
       if($_SERVER["REQUEST_METHOD"] === "POST" ){
-        $newtag = new $this->model("Tag");;
+        $newtag = $this->model("Tag");
                    var_dump($_POST);
                    $newtag->tag_name = $_POST["name"];
                   
@@ -82,6 +93,11 @@ $this->wikiSer = new WikiService();
         "wiki"=> $wi
       ];
       $this->view("admin/wikis", $data);
+    }
+
+    public function archiveWiki($id){
+      $this->wikiSer->archiveWiki($id);
+      header("Location:".URLROOT."admin/wikis");
     }
 
 }

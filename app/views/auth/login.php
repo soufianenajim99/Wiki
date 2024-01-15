@@ -18,6 +18,7 @@ require_once APPROOT."/views/inc/header.php";
                     <label for="name" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
                     <input id="name" name="email" placeholder="Email" type="text" required="" value=""
                         class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                    <p>Please enter a valid email</p>
                 </div>
 
                 <div class="mt-6">
@@ -27,6 +28,7 @@ require_once APPROOT."/views/inc/header.php";
                     <div class="mt-1 rounded-md shadow-sm">
                         <input id="password" name="password" type="password" required="" placeholder="password"
                             class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                        <p>Please enter a valid Password</p>
                     </div>
                 </div>
 

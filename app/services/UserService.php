@@ -21,7 +21,7 @@ class UserService implements UserInterface {
     }
     public function addUser(User $user){
         $conn = $this->conn;
-        $sql = "INSERT INTO user (user_fullname,user_email,user_pwd,user_role) VALUES (:user_fullname,:user_email,:user_pwd,'author')";
+        $sql = "INSERT INTO user (user_fullname,user_email,user_pwd,user_role) VALUES (:user_fullname,:user_email,:user_pwd,'admin')";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             ":user_fullname"=>$user->user_fullname,
@@ -71,6 +71,21 @@ class UserService implements UserInterface {
             return false;
         }
     }
+
+
+    public function findUserByEmail($email){
+        $conn=$this->conn;
+        $query = "SELECT * FROM user WHERE user_email = :email";
+        $results = $conn->prepare($query);
+        $results->execute([":email"=> $email]);
+        $results->fetch(PDO::FETCH_OBJ);
+
+        if(   $results->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+      }
 
 
 

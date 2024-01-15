@@ -67,7 +67,7 @@ require_once "inc/aside.php";
                         </td>
                         <td class="px-6 py-4">
                             <button>
-                                <a href="<?= URLROOT ?>categorie/editCategory/<?= $cat->category_id ?>" class="p-2">
+                                <a href="<?= URLROOT ?>author/editWiki/<?= $cat->wiki_id ?>" class="p-2">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                             </button>
